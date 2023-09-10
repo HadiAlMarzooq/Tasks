@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Distribution</title>
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-image: url('https://i.imgur.com/7J9z1vJ.png');
+            background-repeat: repeat;
+            overflow: hidden;
+            position: relative;
+        }
+        table {
+            width: 80%;
+            margin: 50px auto;
+            border-collapse: collapse;
+            box-shadow: 0 0 20px rgba(0,0,0,0.15);
+            z-index: 10202;
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            border: 1px solid #999;
+            padding: 10px 20px;
+            text-align: left;
+            transition: background-color 0.3s ease;
+        }
+        th {
+            background: linear-gradient(to bottom, #f3f3f3, #e6e6e6);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+        tr:hover td {
+            background-color: #f2f2f2;
+        }
+        @keyframes flying {
+            0% { top: -5%; }
+            100% { top: 105%; }
+        }
+        .animation {
+            position: absolute;
+            font-size: 30px;
+            animation-name: flying;
+            animation-duration: 4s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+        }
+        @media only screen and (max-width: 768px) {
+            table {
+                width: 100%;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h2 style="text-align:center;">Task Distribution</h2>
+    <table>
+        <tr>
+            <th>Team Member</th>
+            <th>Assigned Tasks</th>
+        </tr>
+        <tr>
+            <td>Hadi AlSinan</td>
+            <td>1. Overview (5), 2.1 Project Goals (5), 2.2.1 Included (5)</td>
+        </tr>
+        <tr>
+            <td>Mohammed AlThunayan</td>
+            <td>2. Goals and Scope (5), 2.2 Project Scope (5), 2.3 References (5)</td>
+        </tr>
+        <tr>
+            <td>Hadi AlMarzooq</td>
+            <td>2.2.2 Excluded (5), 3.1 Internal Organization Structure (6), 3.2 Project Team (6)</td>
+        </tr>
+        <tr>
+            <td>Mohammed AlRamis</td>
+            <td>4. Schedule and Budget (6), 4.1 Schedule and Milestones (6), 4.2 Cost Estimation (6)</td>
+        </tr>
+        <tr>
+            <td>Mustafa AlSadah</td>
+            <td>4.2.1 Budget (6), 4.3 Development Process (6), 5.1 Change management plan (7)</td>
+        </tr>
+        <tr>
+            <td>Ali AlMarzooq</td>
+            <td>5. Management Plans (7), 5.2 Communication Management Plan (7), 5.3 Risk Management Plan (7)</td>
+        </tr>
+        <tr>
+            <td>Ali AlHerz</td>
+            <td>5.3.1 Risk Plans (7), 5.3.2 Risk Register (7), 6. Abbreviations and Definitions (8)</td>
+        </tr>
+
+    </table>
+
+    <script>
+        setInterval(() => {
+            const animation = document.createElement("div");
+            animation.textContent = Math.round(Math.random());
+            animation.style.left = Math.random() * 100 + "%";
+            animation.style.animationDuration = Math.random() * 2 + 3 + "s";
+            animation.className = "animation";
+            document.body.appendChild(animation);
+            
+            setTimeout(() => {
+                document.body.removeChild(animation);
+            }, 4000);
+        }, 200);
+    </script>
+
+</body>
+
+</html>
